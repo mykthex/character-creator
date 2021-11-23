@@ -3,11 +3,20 @@
   padding-bottom: 64px;
 }
 
-.maxWidthWrapper {
+.characterEditor::before {
+  content: "";
+  background-color: hsl(195deg, 20%, 86%);
+  height: 40%;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: -1;
 }
 
 .header {
   padding-bottom: 64px;
+  max-width: 65%;
 }
 
 .title {
@@ -24,7 +33,59 @@
 }
 
 .characterWrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: fixed;
+  min-height: 500px;
+  max-height: 100%;
+  right: 0;
+  top: 0;
+  width: 50%;
+  padding: 100px 0 50px 60px;
 }
 
 .controlColumn {
+  max-width: 50%;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .header {
+    padding-bottom: 64px;
+    max-width: none;
+    padding: 0 20px;
+  }
+
+  .maxWidthWrapper {
+    z-index: 5;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .controlColumn {
+    max-width: none;
+    display: flex;
+    min-height: 600px;
+    align-items: flex-end;
+    overflow-x: auto;
+    padding: 0 20px 60px;
+  }
+
+  .characterEditor {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    position: relative;
+  }
+
+  .characterWrapper {
+    width: 100%;
+    padding: 40px 20px;
+    height: 600px;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    justify-content: center;
+  }  
 }
